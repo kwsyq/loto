@@ -10,8 +10,8 @@ class Emails extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function customer()
+    public function subscriber()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Subscriber::class);
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use \App\Mail\LuckyNumbers;
 use \App\Helpers\LuckyNumbersHelper;
-use \App\Models\Customer;
+use \App\Models\Subscriber;
 
 class SendEmailJob implements ShouldQueue
 {
@@ -29,7 +29,7 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $cust=Customer::all();
+        $cust=Subscriber::all();
         foreach($cust as $c){
             if($c->active){
                 $numbers=LuckyNumbersHelper::lucky_numbers();

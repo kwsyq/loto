@@ -9,8 +9,8 @@ class Subscriber extends Model
 {
     use HasFactory;
 
-    protected $table="customers";
-    
+    protected $table="subscribers";
+
     protected $primaryKey = 'id';
 
     protected $guarded=[];

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Mail\LuckyNumbers;
 use \App\Helpers\LuckyNumbersHelper;
-use \App\Models\Customer;
+use \App\Models\Subscriber;
 
 
 class LuckyNumbersController extends Controller
@@ -22,7 +22,7 @@ class LuckyNumbersController extends Controller
     public function send_email()
     {
         $output="";
-        $cust=Customer::all();
+        $cust=Subscriber::all();
         foreach($cust as $c){
             if($c->active){
                 $numbers=LuckyNumbersHelper::lucky_numbers();
