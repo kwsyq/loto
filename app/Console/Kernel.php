@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->job(new SendEmailJob());//->weeklyOn(0, '10:15');
+        $schedule->job(new SendEmailJob())->weeklyOn(7, '07:00');
     }
 
     /**

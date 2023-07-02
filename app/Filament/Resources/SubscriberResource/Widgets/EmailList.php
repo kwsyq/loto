@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\CustomerResource\Widgets;
+namespace App\Filament\Resources\SubscriberResource\Widgets;
 
 use Closure;
 use App\Models\Emails;
@@ -17,7 +17,7 @@ class EmailList extends BaseWidget
 
     protected function getTableQuery(): Builder
     {
-        return Emails::query()->where('customer_id', $this->record["id"])->latest();
+        return Emails::query()->where('subscriber_id', $this->record["id"])->latest();
     }
 
 
